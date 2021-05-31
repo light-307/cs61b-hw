@@ -38,6 +38,7 @@ public class TestBSTMap {
     @Test
     public void sanityContainsKeyTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        b.containsKey("waterYouDoingHere");
         assertFalse(b.containsKey("waterYouDoingHere"));
         b.put("waterYouDoingHere", 0);
         assertTrue(b.containsKey("waterYouDoingHere"));
@@ -75,6 +76,18 @@ public class TestBSTMap {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         b.put("hi", 1);
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
+    }
+
+    @Test
+    public void sanityprintInOrderTest() {
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        b.put("ci", 1);
+        b.put("bi", 2);
+        b.put("ai", 3);
+        b.put("di", 4);
+        b.put("ei", 5);
+        b.put("bz", 6);
+        b.printInOrder();
     }
 
     public static void main(String[] args) {
