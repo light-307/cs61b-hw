@@ -3,6 +3,7 @@ package bearmaps.proj2c.slidingpuzzle;
 import bearmaps.proj2c.LazySolver;
 import bearmaps.proj2c.ShortestPathsSolver;
 import bearmaps.proj2c.SolutionPrinter;
+import bearmaps.proj2c.AStarSolver;
 
 /**
  * Showcases how the AStarSolver can be used for solving sliding puzzles.
@@ -21,5 +22,8 @@ public class DemoSlidingPuzzleSolution {
 
         ShortestPathsSolver<Board> solver = new LazySolver<>(spg, start, goal, 20);
         SolutionPrinter.summarizeSolution(solver, "\n");
+
+        AStarSolver<Board> Asolver = new AStarSolver<>(spg, start, goal, 10);
+        SolutionPrinter.summarizeSolution(Asolver, "\n");
     }
 }

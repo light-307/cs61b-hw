@@ -3,6 +3,7 @@ package bearmaps.proj2c.lectureexample;
 import bearmaps.proj2c.LazySolver;
 import bearmaps.proj2c.ShortestPathsSolver;
 import bearmaps.proj2c.SolutionPrinter;
+import bearmaps.proj2c.AStarSolver;
 
 /**
  * Showcases how the AStarSolver can solve the example from lecture.
@@ -36,5 +37,8 @@ public class DemoLectureExampleSolution {
 
         ShortestPathsSolver<Integer> solver = new LazySolver<>(wdg, start, goal, 10);
         SolutionPrinter.summarizeSolution(solver, " => ");
+
+        AStarSolver<Integer> Asolver = new AStarSolver<>(wdg, start, goal, 10);
+        SolutionPrinter.summarizeSolution(Asolver, " => ");
     }
 }

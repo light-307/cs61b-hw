@@ -99,28 +99,29 @@ public class ArrayHeapMinPQTest {
     public void Test_time() {
         ArrayHeapMinPQ<Double> heapPQ = new ArrayHeapMinPQ<Double>();
         NaiveMinPQ<Double> naivePQ = new NaiveMinPQ<Double>();
+        DoubleMapPQ<Double> doublePQ = new DoubleMapPQ<Double>();
         double add_num;
         double change_num;
 
         Stopwatch sw = new Stopwatch();
-        for (int i = 0; i < 1000000; i++) {
-            add_num = StdRandom.uniform(-1000.0, 1000.0);
-            if (!naivePQ.contains(add_num)) {
-                naivePQ.add(add_num, add_num);
-            }
-        }
-        for (int i = 0; i < 1000; i++) {
-            add_num = StdRandom.uniform(-1000.0, 1000.0);
-            change_num = StdRandom.uniform(-1000.0, 1000.0);
-            if (!naivePQ.contains(add_num)) {
-                naivePQ.add(add_num, add_num);
-                naivePQ.changePriority(add_num, change_num);
-                naivePQ.removeSmallest();
-                naivePQ.getSmallest();
-                naivePQ.size();
-            }
-        }
-        System.out.println("naivePQ total time elapsed: " + sw.elapsedTime() +  " seconds.");
+//        for (int i = 0; i < 1000000; i++) {
+//            add_num = StdRandom.uniform(-1000.0, 1000.0);
+//            if (!naivePQ.contains(add_num)) {
+//                naivePQ.add(add_num, add_num);
+//            }
+//        }
+//        for (int i = 0; i < 1000; i++) {
+//            add_num = StdRandom.uniform(-1000.0, 1000.0);
+//            change_num = StdRandom.uniform(-1000.0, 1000.0);
+//            if (!naivePQ.contains(add_num)) {
+//                naivePQ.add(add_num, add_num);
+//                naivePQ.changePriority(add_num, change_num);
+//                naivePQ.removeSmallest();
+//                naivePQ.getSmallest();
+//                naivePQ.size();
+//            }
+//        }
+//        System.out.println("naivePQ total time elapsed: " + sw.elapsedTime() +  " seconds.");
 
         sw = new Stopwatch();
         for (int i = 0; i < 1000000; i++) {
@@ -142,5 +143,25 @@ public class ArrayHeapMinPQTest {
         }
         System.out.println("heapPQ total time elapsed: " + sw.elapsedTime() +  " seconds.");
 
+
+        sw = new Stopwatch();
+        for (int i = 0; i < 1000000; i++) {
+            add_num = StdRandom.uniform(-1000.0, 1000.0);
+            if (!doublePQ.contains(add_num)) {
+                doublePQ.add(add_num, add_num);
+            }
+        }
+        for (int i = 0; i < 1000; i++) {
+            add_num = StdRandom.uniform(-1000.0, 1000.0);
+            change_num = StdRandom.uniform(-1000.0, 1000.0);
+            if (!doublePQ.contains(add_num)) {
+                doublePQ.add(add_num, add_num);
+                doublePQ.changePriority(add_num, change_num);
+                doublePQ.removeSmallest();
+                doublePQ.getSmallest();
+                doublePQ.size();
+            }
+        }
+        System.out.println("doublePQ total time elapsed: " + sw.elapsedTime() +  " seconds.");
     }
 }
