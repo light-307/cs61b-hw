@@ -24,8 +24,10 @@ import static org.junit.Assert.assertTrue;
 public class TestRasterAPIHandler {
     private static final double DOUBLE_THRESHOLD = 0.000000001;
     private static DecimalFormat df2 = new DecimalFormat(".#########");
-    private static final String PARAMS_FILE = "../library-fa20/data/proj2d_test_inputs/raster_params.txt";
-    private static final String RESULTS_FILE = "../library-fa20/data/proj2d_test_inputs/raster_results.txt";
+//    private static final String PARAMS_FILE = "../library-fa20/data/proj2d_test_inputs/raster_params.txt";
+    private static final String PARAMS_FILE = "./cs61b-hw/library-fa20/data/proj2d_test_inputs/raster_params.txt";
+//    private static final String RESULTS_FILE = "../library-fa20/data/proj2d_test_inputs/raster_results.txt";
+    private static final String RESULTS_FILE = "./cs61b-hw/library-fa20/data/proj2d_test_inputs/raster_results.txt";
     private static final int NUM_TESTS = 8;
     private static RasterAPIHandler rasterer;
 
@@ -159,4 +161,21 @@ public class TestRasterAPIHandler {
         return sj.toString();
     }
 
+
+    @Test
+    public void justTest() {
+        int lr_x = 5;
+        int ul_x = 1;
+        int lr_y = 6;
+        int ul_y = 2;
+        String[][] render_grid = new String[lr_x-ul_x+1][lr_y-ul_y+1];
+        int depth = 2;
+
+        for (int i = 0; i < lr_y-ul_y+1; i++) {
+            for (int j = 0; j < lr_x-ul_x+1; j++) {
+                render_grid[i][j] = String.format("d%d_x%d_y%d.png", depth,ul_x+j,ul_y+i);
+            }
+        }
+        System.out.println(render_grid);
+    }
 }
