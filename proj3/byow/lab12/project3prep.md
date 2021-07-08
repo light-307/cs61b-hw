@@ -17,9 +17,9 @@ Answer:
 **If you were to start working on world generation, what kind of method would you think of writing first? 
 Think back to the lab and the process used to eventually get to tessellating hexagons.**
 
-Answer:
+Answer: create a room first
 
 -----
 **What distinguishes a hallway from a room? How are they similar?**
 
-Answer:
+Answer: The width. They are both connected tiles.
